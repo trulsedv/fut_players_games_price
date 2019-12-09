@@ -12,6 +12,7 @@ position_list = ["GK", "RB,RWB", "LB,LWB", "CB", "CDM,CM,CAM", "RM,RW,RF", "LM,L
 
 for position in position_list:
 	for version in version_list:
+		print("%s %s" % (position, version))
 		url = "%s%s%s%s%s" % (url_base, url_version, version, url_position, position)
 
 		page = requests.get(url)
@@ -27,7 +28,8 @@ for position in position_list:
 
 		json_string = json.dumps(l, ensure_ascii=False).encode('utf8')
 		now = datetime.now()
-		dt_string = now.strftime("%Y%m%d%H%M")
+		dt_string = now.strftime("%Y%m%d%H")
 		filename = "../scraped_data/%s_%s_%s.json" % (dt_string, position, version)
 		with open(filename, 'x', encoding='utf8') as json_file:
 		    json.dump(l, json_file, indent=4, ensure_ascii=False)
+input("Finished. Press ENTER to exit.")
