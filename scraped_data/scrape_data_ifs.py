@@ -7,7 +7,7 @@ url_base = "https://www.futbin.com/20/pgp?page=1&sort=games&order=desc"
 url_version = "&version="
 url_position = "&position="
 
-version_list = ["all_nif", "all_specials"]
+version_list = ["all_ifs"]
 position_list = ["GK", "RB,RWB", "LB,LWB", "CB", "CDM,CM,CAM", "RM,RW,RF", "LM,LW,LF", "CF,ST"]
 
 for position in position_list:
